@@ -8,6 +8,7 @@ body {
 	font-family:  'Alice', serif;
 	font-size: 18px;
 	line-height: 1.5;
+	/* background-color: #edf3f5;*/
 }
 
 h1, h2, h3 {
@@ -16,9 +17,58 @@ h1, h2, h3 {
 	margin: 0;
 }
 
+h1 {
+	font-size: 100px;
+	color: #a3cb38;
+	line-height: 1.2;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+h2 {
+	font-size: 50px;
+	color: #a3cb38;
+	margin-top: 20px;
+}
+
+p {
+	margin: 0;
+}
+
+.meta,
+figcaption {
+	font-size: 15px;
+	color: #b2bec3;
+}
+
+
 blockquote {
 	font-family: 'Kaushan Script', cursive;
+	font-size: 30px;
+	color: #b2bec3;
+	text-align: center;
+
 }
+
+blockquote::before {
+	content: "";
+	display: block;
+	width: 100px;
+	height: 2px;
+	background-color: #c4e538;
+	margin: 10px auto;
+}
+
+blockquote::after {
+	content: "";
+	display: block;
+	width: 100px;
+	height: 2px;
+	background-color: #c4e538;
+	margin: 10px auto;
+}
+
+
 
 /* --------------------------------------------------- */
 
@@ -33,6 +83,88 @@ blockquote {
 	--zelena: #a3cb38;
 	--limetka: #c4e538;
 }
+
+.blog {
+	display: grid;
+	grid-template-columns:[celek-start vlevo-start] 1fr [vlevo-end obsah-start] 4fr [obsah-end vpravo-start] 2fr [vpravo-end celek-end];
+	grid-gap: 20px 40px;
+	background-color: white;
+}
+
+.blog > h1,
+.blog > h2,
+.blog > p,
+.blog > footer {
+	grid-column: obsah;
+}
+
+.blog > blockquote {
+	grid-column: celek;
+}
+
+.tip-vlevo {
+	grid-column: vlevo;
+	display: block;
+	margin: auto;
+	margin-top: 0;
+	margin-left: 20px;
+	padding: 15px;
+	background-color: #edf3f5;;
+	text-align: right;
+	font-size: 15px;
+	color: #636e72;
+	border-right: 2px solid #ee5a24;
+}
+
+.tip-vlevo a {
+	color: #ee5a24;
+}
+
+.tip-vlevo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.tip-vpravo {
+	grid-column: vpravo;
+	display: block;
+	margin: auto;
+	margin-right: 20px;
+	margin-top: 0;
+	padding: 15px;
+	background-color: #edf3f5;;
+	text-align: left;
+	font-size: 15px;
+	color: #636e72;
+	border-left: 2px solid #ee5a24;
+} 
+
+.tip-vpravo a {
+	color: #ee5a24;
+}
+
+img {
+	width: 100%;
+	height: 95%;
+	object-fit: cover;
+}
+
+.blog > figure {
+	margin: 20px;
+	grid-column: celek;
+}
+
+footer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #b2bec3 ;
+}
+
+footer a  {
+	color: #b2bec3;
+}
+
 
 /*
 	Všimni si, jak jsou zde nadefinované barvy.
